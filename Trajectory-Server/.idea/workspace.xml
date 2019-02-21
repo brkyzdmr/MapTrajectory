@@ -2,110 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aea706c-cfb2-474e-8c0c-e0e8acdcc005" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../LatLong (copy).txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LatLong.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Trajectory-Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/built-jar.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/.netbeans_automatic_build" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/.netbeans_update_resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/MainFrame.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/Map.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/OutgoingData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/SearchFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/SearchFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/SearchFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/SearchFrame.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/ServiceFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/ServiceFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/ServiceFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/build/classes/mapclient/ServiceFrame.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/MapClient.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/README.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/allclasses-noframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/index-files/index-6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/index-files/index-7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/Client.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/MainFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/Map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/OutgoingData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/Point.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/SearchFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/ServiceFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/class-use/Client.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/class-use/MainFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/class-use/Map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/class-use/OutgoingData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/class-use/Point.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/class-use/SearchFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/class-use/ServiceFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/mapclient/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/package-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/serialized-form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/javadoc/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/dist/lib/MapServer.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/nbproject/build-impl.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/nbproject/genfiles.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/nbproject/private/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/nbproject/private/private.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/nbproject/private/private.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/nbproject/project.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/nbproject/project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/redmapcanvas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Client/redmapcanvas.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/rfieldmapcanvas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Client/rfieldmapcanvas.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/target/TrajectoryClient-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Client/target/TrajectoryClient-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Client/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/built-jar.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/.netbeans_automatic_build" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/.netbeans_update_resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/KdTree$KdNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapserver/IncomingData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapserver/QuadTree$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapserver/QuadTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapserver/Reduction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapserver/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/MapServer.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/README.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/lib/MapClient.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/build-impl.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/genfiles.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TrajectoryServer-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TrajectoryServer-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,11 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+            <state relative-caret-position="345">
+              <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -170,6 +76,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -200,37 +107,6 @@
             </path>
             <path>
               <item name="Trajectory-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trajectory-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Trajectory-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trajectory-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Trajectory-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trajectory-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Trajectory-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trajectory-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mapserver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Trajectory-Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trajectory-Server" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Trajectory-Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -242,7 +118,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550766638525" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550767185989" />
     <property name="jdk.selected.JAVA_MODULE" value="8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Trajectory-Client/target/TrajectoryClient-1.0.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -283,6 +159,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="27" width="960" height="1053" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
@@ -290,10 +167,10 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.285558" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.285558" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32967034" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.32967034" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -345,8 +222,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        <state relative-caret-position="345">
+          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>

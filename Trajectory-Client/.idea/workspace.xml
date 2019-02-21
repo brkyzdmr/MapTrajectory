@@ -2,110 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1da1e133-a1c5-46ce-8122-f0fbd9c0b685" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../LatLong (copy).txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LatLong.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/built-jar.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/.netbeans_automatic_build" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/.netbeans_update_resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/MainFrame.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/Map.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/OutgoingData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/SearchFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/SearchFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/SearchFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/SearchFrame.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/ServiceFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/ServiceFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/ServiceFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/mapclient/ServiceFrame.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/MapClient.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/README.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/allclasses-noframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/index-files/index-6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/index-files/index-7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/Client.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/MainFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/Map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/OutgoingData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/Point.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/SearchFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/ServiceFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/class-use/Client.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/class-use/MainFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/class-use/Map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/class-use/OutgoingData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/class-use/Point.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/class-use/SearchFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/class-use/ServiceFrame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/mapclient/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/package-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/serialized-form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/javadoc/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/lib/MapServer.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/build-impl.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/genfiles.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmapcanvas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/redmapcanvas.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rfieldmapcanvas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/rfieldmapcanvas.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TrajectoryClient-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TrajectoryClient-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Trajectory-Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/build/built-jar.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/build/classes/.netbeans_automatic_build" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/build/classes/.netbeans_update_resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/build/classes/KdTree$KdNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/build/classes/mapserver/IncomingData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/build/classes/mapserver/QuadTree$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/build/classes/mapserver/QuadTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/build/classes/mapserver/Reduction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/build/classes/mapserver/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/dist/MapServer.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/dist/README.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/dist/lib/MapClient.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/nbproject/build-impl.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/nbproject/genfiles.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/nbproject/private/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/nbproject/private/private.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/nbproject/private/private.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/nbproject/project.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/nbproject/project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/target/TrajectoryServer-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Server/target/TrajectoryServer-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Server/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Server/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,11 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
               <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -183,15 +89,6 @@
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mapclient/OutgoingData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -203,6 +100,7 @@
         <option value="$PROJECT_DIR$/src/main/java/mapclient/Map.java" />
         <option value="$PROJECT_DIR$/src/main/java/mapclient/MainFrame.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -224,7 +122,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="5">
+  <component name="ProjectFrameBounds" extendedState="4">
     <option name="y" value="27" />
     <option name="width" value="960" />
     <option name="height" value="1053" />
@@ -286,7 +184,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550766638473" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550767185960" />
     <property name="jdk.selected.JAVA_MODULE" value="8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Trajectory-Server/target/TrajectoryServer-1.0.jar" />
     <property name="project.structure.last.edited" value="Project" />
@@ -346,6 +244,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="960" height="1053" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
@@ -353,10 +252,10 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29321662" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29321662" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32967034" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.32967034" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -443,6 +342,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
         </state>
       </provider>
     </entry>
