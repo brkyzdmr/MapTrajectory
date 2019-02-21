@@ -7,23 +7,12 @@
     <groupId>com.brkyzdmr.school</groupId>
     <artifactId>TrajectoryServer</artifactId>
     <version>1.0</version>
-    <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>com.brkyzdmr.school</groupId>
             <artifactId>TrajectoryClient</artifactId>
             <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/dist/lib/MapClient.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     <build>
@@ -49,7 +38,6 @@
                     </archive>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
