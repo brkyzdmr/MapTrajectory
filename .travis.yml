@@ -1,9 +1,9 @@
 language: java
 jdk: oraclejdk8
 jobs:
-include:
--stage: "Tests"
-name: "Test Server"
-script: cd Trajectory-Server && mvn clean install exec:java
--script: cd Trajectory-Client && mvn clean install exec:java
+  include:
+    - stage: "Test Server"
+      script: cd Trajectory-Server && mvn clean install exec:java
+    - stage: "Test Client"
+      script: cd Trajectory-Client && mvn clean install exec:java
 name:"Test Client"
