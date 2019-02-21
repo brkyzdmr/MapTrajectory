@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aea706c-cfb2-474e-8c0c-e0e8acdcc005" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Trajectory-Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trajectory-Client/.travis.yml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -118,7 +118,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550767185989" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550767698774" />
     <property name="jdk.selected.JAVA_MODULE" value="8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Trajectory-Client/target/TrajectoryClient-1.0.jar" />
     <property name="project.structure.last.edited" value="Libraries" />

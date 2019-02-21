@@ -1,0 +1,6 @@
+language: java
+jdk: oraclejdk8
+env:
+- TEST_DIR=Trajectory-Client
+- TEST_DIR=Trajectory-Server
+script: cd $TEST_DIR && mvn clean install exec:java
