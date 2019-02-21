@@ -6,4 +6,3 @@ jobs:
       script: cd Trajectory-Server && mvn clean install exec:java
     - stage: "Test Client"
       script: cd Trajectory-Client && mvn clean install exec:java
-name:"Test Client"
