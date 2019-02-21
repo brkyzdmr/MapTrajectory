@@ -1,0 +1,5 @@
+mapserver/IncomingData.class
+mapserver/QuadTree.class
+mapserver/QuadTree$Node.class
+mapserver/Server.class
+mapserver/Reduction.class
