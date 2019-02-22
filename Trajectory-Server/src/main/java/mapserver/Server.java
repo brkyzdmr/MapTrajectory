@@ -30,7 +30,7 @@ public class Server extends Thread {
             
             mapclient.OutgoingData clientData = (mapclient.OutgoingData) input.readObject();
             //printPoints(clientData.getData());
-            System.out.println("Key: " + clientData.getKey());    
+            //System.out.println("Key: " + clientData.getKey());    
 
             // Runs the relevant field by using the key information in the data from the client.
 

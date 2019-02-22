@@ -60,7 +60,6 @@ public class QuadTree {
                     if(focusedNode == null) {
                         Node newNode = new Node(latitude, longitude);
                         parent.NW = newNode;
-                        System.out.println("NW");
                         return;
                     }
                 } else if(latitude > parent.latitude && longitude < parent.longitude) {
@@ -69,7 +68,6 @@ public class QuadTree {
                     if(focusedNode == null) {
                         Node newNode = new Node(latitude, longitude);
                         parent.NE = newNode;
-                        System.out.println("NE");
                         return;
                     }
                 } else if(latitude < parent.latitude && longitude > parent.longitude) {
@@ -78,7 +76,6 @@ public class QuadTree {
                     if(focusedNode == null) {
                         Node newNode = new Node(latitude, longitude);
                         parent.SW = newNode;
-                        System.out.println("SW");
                         return;
                     }
                 } else if(latitude > parent.latitude && longitude > parent.longitude) {
@@ -87,7 +84,6 @@ public class QuadTree {
                     if(focusedNode == null) {
                         Node newNode = new Node(latitude, longitude);
                         parent.SE = newNode;
-                        System.out.println("SE");
                         return;
                     }
                 } else {
@@ -154,14 +150,12 @@ public class QuadTree {
         clickY = Double.parseDouble(values[1]); // center point longitude to be searched
         edgeX = Double.parseDouble(values[2]);  // edge data X
         edgeY = Double.parseDouble(values[3]);  // edge data Y
-        System.out.println(clickX + "," + clickY + "," + edgeX + "," + edgeY);
         
         result = new ArrayList<>();
         makeRoot(data.getCrudedData());
         makeTree(data.getCrudedData());
-        System.out.println("Root: " + root.latitude + "," + root.longitude);
         searchNode(root);
-        printResult();
+        //printResult();
         System.out.println("Search completed!");
     }
     
@@ -186,11 +180,10 @@ public class QuadTree {
         result = new ArrayList<>();
         makeRoot(indata.getProcessedData());
         makeTree(indata.getProcessedData());
-        System.out.println("Root: " + root.latitude + "," + root.longitude);
 
         searchNode(root);
 
-        printResult();
+        //printResult();
         System.out.println("Search completed!");
     }
     
@@ -211,7 +204,6 @@ public class QuadTree {
         }
         avrgLatitude /= points.size();  // latitude average
         avrgLongitude /= points.size(); // longitude average
-        System.out.println("Size: " + points.size());
         
         rootLat = avrgLatitude;
         rootLong = avrgLongitude;

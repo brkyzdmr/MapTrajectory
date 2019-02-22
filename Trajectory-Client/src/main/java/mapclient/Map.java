@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class Map {
     
-    private static String API_KEY = "AIzaSyAgls3MF-F3DOBSW_ci3VepC1Om2Fg-jHY";
+    private static String API_KEY = "123456789123456789";
     
     /**
      * imageUrl makes a request to Google servers and returns a picture. 
@@ -29,7 +29,7 @@ public class Map {
     public static void getImageFromUrl(String imageUrl, String imageName) 
             throws MalformedURLException, IOException {
         
-        System.out.println(imageUrl);
+        //System.out.println(imageUrl);
         String destinationFile = imageName + ".jpg";
         URL url = new URL(imageUrl);
         InputStream is = url.openStream();
@@ -63,8 +63,6 @@ public class Map {
         } else {
             bf.replace(i+6, i+7, String.valueOf(zoomAmount));
         }
-        System.out.println(bf);
-        System.out.println("Zoom Amount : " + zoomAmount);
         
         return bf.toString();
     }

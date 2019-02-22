@@ -28,7 +28,6 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class MainFrame extends javax.swing.JFrame {
 
     private ArrayList<Point> points; // it stores raw trajectory data
-    //private String API_KEY = "AIzaSyB8WNqID5oeMT5VePIpT9Ig_uPcXd0BVdA";
     private boolean isFileLoaded = false;
     private int zoomAmount = 17;
     private static String mapUrl;
@@ -268,7 +267,6 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnZoomInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZoomInActionPerformed
         if (isFileLoaded) {
-            System.out.println("Zoom In");
             zoomIn();
         } else {
             // Button not working here.
@@ -277,7 +275,6 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnZoomOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZoomOutActionPerformed
         if (isFileLoaded) {
-            System.out.println("Zoom Out");
             zoomOut();
         } else {
             // Button not working here.
