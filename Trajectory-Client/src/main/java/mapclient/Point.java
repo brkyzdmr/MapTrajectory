@@ -4,7 +4,7 @@ package mapclient;
 import java.io.Serializable;
 
 /**
- * Dosyadan okunan verileri toplu halde tutmak için oluşturulmuş sınıf
+ * This is the class created to keep the data read from the file wholesale.
  * 
  */
 public class Point implements Serializable {

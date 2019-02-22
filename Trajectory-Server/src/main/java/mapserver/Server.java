@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Durmadan çalışan multithreded server oluşturan sınıf
+ * Multithreded server forming class running nonstop
  * 
  */
 public class Server extends Thread {
     
-    public static final int port = 5000;    // bağlantı kurulacak port numarası
+    public static final int port = 5000;    // port number to be connected
     public Socket socket = null;
     //public ServerSocket serverSocket = null;
     
@@ -21,7 +21,7 @@ public class Server extends Thread {
 
     @Override
     public void run() {
-        long startTime = System.nanoTime(); // Thread işleme başladığı andaki zaman(nanosaniye)
+        long startTime = System.nanoTime(); // When the thread starts processing (nanoseconds)
         System.out.println("Thread: " + this.getName());        
         
         try {            
@@ -32,11 +32,10 @@ public class Server extends Thread {
             //printPoints(clientData.getData());
             System.out.println("Key: " + clientData.getKey());    
 
-            // İstemciden gelen veri içerisindeki key bilgisini kullanarak 
-            // ilgili alanı çalıştırır.
+            // Runs the relevant field by using the key information in the data from the client.
 
             switch (clientData.getKey()) {
-                case "indirgeme":
+                case "reduction":
                 {
                     List<mapclient.Point> result = new ArrayList<>();
                     double epsilon = Double.parseDouble(
@@ -47,7 +46,7 @@ public class Server extends Thread {
                             clientData.getCrudedData(), epsilon, result);
 
                     printPoints(result);                            
-                    long endTime = System.nanoTime(); // İndirgeme işlemi sonlandığı andaki zaman(nanosaniye)
+                    long endTime = System.nanoTime(); // Time at which the reduction process ends (nanoseconds)
                     String threadTime = calculateTime(startTime, endTime);
                     System.out.println("Time: " + threadTime);
 
@@ -64,46 +63,46 @@ public class Server extends Thread {
                     output.writeObject(serverData);
                     break;  
                 }
-                case "alansorgusu":   
+                case "searchinfield":   
                 {           
                     IncomingData serverData = new IncomingData(clientData.getCrudedData());
-                    QuadTree.searchInTree(clientData);  // arama işlemi yapılır
-                    serverData.setProcessedData(QuadTree.getResult()); // bulunan sonuç listesi gönderilecek nesneye yazılır.
-                    long endTime = System.nanoTime(); // alan sorgusu bittiği sıradaki zaman(nanosaniye)
+                    QuadTree.searchInTree(clientData);  // search is performed
+                    serverData.setProcessedData(QuadTree.getResult()); // The resulting list of results is written to the object to be sent.
+                    long endTime = System.nanoTime(); // the time in which the field query ends (nanoseconds)
                     String threadTime = calculateTime(startTime, endTime);
                     System.out.println("Time: " + threadTime);
                     serverData.setThreadTime(threadTime);
                     
-                    output.writeObject(serverData); // İşlemler sonrası oluşan nesneyi istemciye gönderir.
+                    output.writeObject(serverData); // Sends the resulting object to the client after the operations.
 
-                    System.out.println("Alan sorgusu yapıldı.");
+                    System.out.println("Search in field succeed!");
                     break;
                 }
-                case "indirgemesorgusu":   
+                case "searchinreductedfield":   
                 {
                     List<mapclient.Point> result = new ArrayList<>();
                     String[] values = clientData.getTextBoxValue().split(",");
                     double epsilon = Double.parseDouble(values[0]);
                     double reductionRate;
                     
-                    // indirgeme işlemi yapılır
+                    // reduction is performed
                     Reduction.DouglasPeucker(
                             clientData.getCrudedData(), epsilon, result);
 
-                    // Gönderilecek veri nesnesi
+                    // The data object to send
                     IncomingData serverData = new IncomingData(
                                 clientData.getCrudedData());
-                    serverData.setProcessedData(result); // indirgeme işlemi sonrası oluşan veri nesneye atanır
-                    // indirgeme oranı hesaplanır
+                    serverData.setProcessedData(result); // The data generated after the reduction process is assigned to the object
+                    // reduction rate is calculated
                     reductionRate = Reduction.calculateReductionRate(
                                 clientData.getCrudedData().size(),
                                 serverData.getProcessedData().size());
 
-                    serverData.setReductionRate(reductionRate); // indirgeme oranı nesneye atanır
+                    serverData.setReductionRate(reductionRate); // the reduction ratio is assigned to the object
                     
-                    // İndirgeme işlemi yapıldıktan sonra oluşan veri seti üzerinde arama işlemi yapılır.
+                    // After the reduction process is done, the data set is searched.
                     QuadTree.searchInTree(clientData, serverData);
-                    // Arama işlemi sonrası oluşan veri gönderilecek nesneye yazılır.
+                    // The data generated after the search is written to the object to be sent.
                     serverData.setProcessedData(QuadTree.getResult()); 
                     long endTime = System.nanoTime();
                     String threadTime = calculateTime(startTime, endTime);
@@ -111,28 +110,28 @@ public class Server extends Thread {
 
 
                     serverData.setThreadTime(threadTime);
-                    output.writeObject(serverData); // İşlemler sonrası oluşan nesneyi istemciye gönderir.
+                    output.writeObject(serverData); // Sends the resulting object to the client after the operations.
 
-                    System.out.println("İndirgeme sorgusu yapıldı.");
+                    System.out.println("Search in reducted field succeed!");
                     break;
                 }
                 default:
-                    System.out.println("Server işlem hatası!! (Kritik hata)");
+                    System.out.println("Server processing error! (Critical error)");
                     break;
             }            
         } catch (IOException | NullPointerException ex) {
-            // ClassNotFoundException için MapClient.jar dosyası projeye eklenmiştir.
-            System.out.println("Socket hatası: " + this.getName()
+            // The MapClient.jar file for ClassNotFoundException has been added to the project.
+            System.out.println("Socket error: " + this.getName()
                                                            + " --> " + ex);
         } catch (Exception ex){
-            System.out.println("Bilinmeyen hata: " + this.getName()
+            System.out.println("Unknown error: " + this.getName()
                                                            + " --> " + ex);
         } finally {
             try {
                 socket.close();
-                System.out.println("Sunucu bağlantısı kesildi.");
+                System.out.println("Server disconnected.");
             } catch (IOException ex) {
-                System.out.println("Socket kapatılamadı: " + this.getName()
+                System.out.println("socket could not be closed: " + this.getName()
                                                            + " --> " + ex);
             }
             
@@ -141,42 +140,41 @@ public class Server extends Thread {
 
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = new ServerSocket(port);
-        System.out.println("Sunucu başladı: " + serverSocket);
-        /*
-        * Sunucu başladıktan sonra sonsuz bir döngü oluşturulur.
-        * İstemciler ile bağlantı sağlandıkça yeni bir thread oluşturulur.
-        * Eğer thread ile istemci arasındaki haberleşme 5 saniye içerisinde
-        * yapılmazsa thread sonlandırılır ve yeni bir istek için döngü
-        * istemciyi ile iletişim sağlanan portu dinlemeye devam eder.
+        System.out.println("Server starts: " + serverSocket);
+        /** 
+         * After the server starts, an infinite loop is created. A new thread is 
+         * created as the connection with the clients is established. If the communication 
+         * between the thread and the client is not done within 5 seconds, the thread is 
+         * terminated and the loop continues to listen to the port that communicates with 
+         * the client for a new request. 
         */
         try {
             for (;;) {
                 Socket clientSocket = serverSocket.accept();
-                System.out.println("Bağlantı kabul edildi: " + clientSocket);
+                System.out.println("Connection accepted: " + clientSocket);
                 clientSocket.setSoTimeout(5*1000);
-                new Server(clientSocket).start(); // Thread başlangıcı
+                new Server(clientSocket).start(); // Thread starts
             }            
         } catch (IOException ex) {
-            System.err.println("Ana yapıda hata var: " + ex);
+            System.err.println("Error in main structure: " + ex);
         } finally {
-            serverSocket.close(); // Soketi kapat
+            serverSocket.close(); // Close the socket
         }
         
     }
     
     private static void printPoints(List<mapclient.Point> points) {
-        System.out.println("print");
         for(int i=0; i<points.size(); i++) {
             System.out.println(points.get(i).getLatitude() + ","
             + points.get(i).getLongitude());
         }
     }
     /**
-     * Nanosaniye bilgilerini kullanarak anlamlı bir zaman nesnesi oluşturur.
+     * Creates a meaningful time object using nanosecond information.
      * 
-     * @param startTime Başlangıç zamanı(nanosaniye)
-     * @param endTime Bitiş zamanı(nanosaniye)
-     * @return Geçen zaman "Saniye.Salise sn" şeklinde bir String nesnesi döndürür.
+     * @param startTime Start time(nanoseconds)
+     * @param endTime End time(nanoseconds)
+     * @return The elapsed time returns a String object such as "seconds.salads sn".
      */
     private static String calculateTime(long startTime, long endTime) {
         long elapsedTime = endTime - startTime; // nanoseconds

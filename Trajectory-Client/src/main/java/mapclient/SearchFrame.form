@@ -30,8 +30,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtNoktaSayisi" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtThreadZamani" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
+                          <Component id="txtNumberOfPoint" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtThreadTime" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -75,7 +75,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="655" pref="655" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtThreadZamani" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtThreadTime" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtThTime" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -88,20 +88,20 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lbl_SearchMap">
     </Component>
-    <Component class="javax.swing.JLabel" name="txtNoktaSayisi">
+    <Component class="javax.swing.JLabel" name="txtNumberOfPoint">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Ubuntu" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nokta Say&#x131;s&#x131;            : "/>
+        <Property name="text" type="java.lang.String" value="Number of Point: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="txtThreadZamani">
+    <Component class="javax.swing.JLabel" name="txtThreadTime">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Ubuntu" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Thread Zaman&#x131;       :"/>
+        <Property name="text" type="java.lang.String" value="Thread Time:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="txtNumOfPoint">

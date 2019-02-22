@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import mapserver.IncomingData;
 
 /**
- * Sunucu ile iletişimi sağlayan sınıf
+ * The class that provides communication with the server
  * 
  */
 public class Client {
@@ -23,10 +23,10 @@ public class Client {
     private static mapserver.IncomingData serverData = null;
     
     /**
-     * Sunucuya OutgoingData tipinde bir nesne göndermemizi sağlar.
+     * Lets us send an OutgoingData type object to the server.
      * 
-     * @param outgoingData Sunucuya gönderilecek nesne
-     * @return Sunucudan IncomingData tipinde bir nesne döner.
+     * @param outgoingData Object to be sent to the server
+     * @return An IncomingData type object is returned from the server.
      * @throws IOException 
      */    
     public static mapserver.IncomingData sendMapData(OutgoingData outgoingData) throws IOException {
@@ -52,14 +52,14 @@ public class Client {
             if(serverData != null) {            
                 return serverData;
             } else {
-                JOptionPane.showMessageDialog(null, "Sunucu hatalı harita verisi gönderdi!", 
-                        "Uyarı", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Map data did not send correctly!",
+                        "Warning", JOptionPane.WARNING_MESSAGE);
                 return null;
 
             }
         } catch (IOException ex) {  
-            System.out.println("Client hatası: " + ex);
-            JOptionPane.showMessageDialog(null, "Sunucuya ulaşılamıyor!", 
+            System.out.println("Client error: " + ex);
+            JOptionPane.showMessageDialog(null, "Server not available!",
                     "Uyarı", JOptionPane.WARNING_MESSAGE); 
 
         } catch (ClassNotFoundException ex) {

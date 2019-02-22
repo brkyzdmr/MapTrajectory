@@ -23,18 +23,18 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
- * @author berka
+ * @author brkyzdmr
  */
 public class MainFrame extends javax.swing.JFrame {
 
-    private ArrayList<Point> points; // Dosyadan okunan ham verileri saklar.
-    private String API_KEY = "AIzaSyB8WNqID5oeMT5VePIpT9Ig_uPcXd0BVdA";
+    private ArrayList<Point> points; // it stores raw trajectory data
+    //private String API_KEY = "AIzaSyB8WNqID5oeMT5VePIpT9Ig_uPcXd0BVdA";
     private boolean isFileLoaded = false;
     private int zoomAmount = 17;
-    private static String mapUrl; // Ham veriler ile oluşturulan veriyi saklar.
-    private ServiceFrame sf = ServiceFrame.getInstance(); // ServiceFrame ile haberleşmek için
-    private SearchFrame rf = SearchFrame.getInstance(); // SearchFrame ile haberleşmek için
-    private static String redMapUrl; // İndirgenen için oluşturulan urlyi saklar.
+    private static String mapUrl;
+    private ServiceFrame sf = ServiceFrame.getInstance(); // for communication with the ServiceFrame
+    private SearchFrame rf = SearchFrame.getInstance(); // for communication with the SearchFrame
+    private static String redMapUrl; // it store the url for the reduction data
     private static String fieldMapUrl;
     private static String rFieldMapUrl;
     private static MainFrame instance = new MainFrame();
@@ -43,7 +43,7 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     public MainFrame() {
-        LookNFeel();    // Form tasarımını değiştirmek için
+        //LookNFeel();    
         initComponents();
     }
 
@@ -101,44 +101,44 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnKoordinatEkle = new javax.swing.JButton();
-        btnAlanSorgusu = new javax.swing.JButton();
-        btnIndirgemeYap = new javax.swing.JButton();
+        btnAddTrajectoryData = new javax.swing.JButton();
+        btnSearchInField = new javax.swing.JButton();
+        btnReduction = new javax.swing.JButton();
         lbl_MapImage = new javax.swing.JLabel();
         btnZoomOut = new javax.swing.JButton();
         btnZoomIn = new javax.swing.JButton();
-        txtMerkezNokta = new javax.swing.JTextField();
+        txtCenterPoint = new javax.swing.JTextField();
         txtEpsilon = new javax.swing.JTextField();
-        btnIndirgemeSorgusu = new javax.swing.JButton();
-        txtMerkezNokta2 = new javax.swing.JTextField();
+        btnSearchInReductedField = new javax.swing.JButton();
+        txtCenterPoint2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Gezinge Verisi İşleme - Ana Ekran");
+        setTitle("Trajectory Data Processing - Main Screen");
         setLocation(new java.awt.Point(250, 250));
         setName("mainFrame"); // NOI18N
         setResizable(false);
 
-        btnKoordinatEkle.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
-        btnKoordinatEkle.setText("Koordinatları Ekle");
-        btnKoordinatEkle.addActionListener(new java.awt.event.ActionListener() {
+        btnAddTrajectoryData.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        btnAddTrajectoryData.setText("Add Trajectory Data");
+        btnAddTrajectoryData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKoordinatEkleActionPerformed(evt);
+                btnAddTrajectoryDataActionPerformed(evt);
             }
         });
 
-        btnAlanSorgusu.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
-        btnAlanSorgusu.setText("Alan Sorgusu");
-        btnAlanSorgusu.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchInField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        btnSearchInField.setText("Search in Field");
+        btnSearchInField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlanSorgusuActionPerformed(evt);
+                btnSearchInFieldActionPerformed(evt);
             }
         });
 
-        btnIndirgemeYap.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
-        btnIndirgemeYap.setText("İndirgeme Yap");
-        btnIndirgemeYap.addActionListener(new java.awt.event.ActionListener() {
+        btnReduction.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        btnReduction.setText("Reduction");
+        btnReduction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIndirgemeYapActionPerformed(evt);
+                btnReductionActionPerformed(evt);
             }
         });
 
@@ -160,35 +160,35 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        txtMerkezNokta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtMerkezNokta.setToolTipText("Ham veri üzerinde dikdörtgen alan taraması için gereken bilgiler(MerkezNoktaLat, MerkezNoktaLong, KenarX, KenarY)");
-        txtMerkezNokta.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtCenterPoint.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCenterPoint.setToolTipText("Square searching in the raw trajectory data(CenterPointLat, CenterPointLong, EdgeLengthX, EdgeLengthY)");
+        txtCenterPoint.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtMerkezNoktaMouseClicked(evt);
+                txtCenterPointMouseClicked(evt);
             }
         });
 
         txtEpsilon.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtEpsilon.setToolTipText("İndirgeme yapılabilmesi için gereken epsilon değeri(double)");
+        txtEpsilon.setToolTipText("Epsilon value for reduction (double)");
         txtEpsilon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtEpsilonMouseClicked(evt);
             }
         });
 
-        btnIndirgemeSorgusu.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
-        btnIndirgemeSorgusu.setText("İndirgeme Sorgusu");
-        btnIndirgemeSorgusu.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchInReductedField.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        btnSearchInReductedField.setText("Search in Reducted Field");
+        btnSearchInReductedField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIndirgemeSorgusuActionPerformed(evt);
+                btnSearchInReductedFieldActionPerformed(evt);
             }
         });
 
-        txtMerkezNokta2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtMerkezNokta2.setToolTipText("İndirgeme verisi üzerinde dikdörtgen alan taraması için gereken bilgiler(Epsilon, MerkezNoktaLat, MerkezNoktaLong, KenarX, KenarY)");
-        txtMerkezNokta2.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtCenterPoint2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCenterPoint2.setToolTipText("Square searching in the reducted trajectory data(Epsilon, CenterPointLat, CenterPointLong, EdgeLengthX, EdgeLengthY)");
+        txtCenterPoint2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtMerkezNokta2MouseClicked(evt);
+                txtCenterPoint2MouseClicked(evt);
             }
         });
 
@@ -199,17 +199,17 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnIndirgemeYap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnKoordinatEkle, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                    .addComponent(btnAlanSorgusu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnReduction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAddTrajectoryData, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                    .addComponent(btnSearchInField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnZoomIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnZoomOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtMerkezNokta)
+                    .addComponent(txtCenterPoint)
                     .addComponent(txtEpsilon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                    .addComponent(btnIndirgemeSorgusu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtMerkezNokta2))
+                    .addComponent(btnSearchInReductedField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtCenterPoint2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_MapImage, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13))
@@ -221,19 +221,19 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lbl_MapImage, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnKoordinatEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAddTrajectoryData, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(72, 72, 72)
                         .addComponent(txtEpsilon, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnIndirgemeYap, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnReduction, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtMerkezNokta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCenterPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAlanSorgusu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSearchInField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtMerkezNokta2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCenterPoint2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnIndirgemeSorgusu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSearchInReductedField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnZoomIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,31 +247,31 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * KoordinatEkle butonuna basıldığında, trajectory verilerini bir metin 
-     * dosyasından okumak için File Dialog penceresi açar.
+     * 
+     * It creates a File Dialog Window for getting the trajectory data from a file
      * 
      * @param evt 
      */
-    private void btnKoordinatEkleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKoordinatEkleActionPerformed
+    private void btnAddTrajectoryDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTrajectoryDataActionPerformed
         if (!isFileLoaded) {
             openFileDialog();
         } else {
             int reply = JOptionPane.showConfirmDialog(null,
-                    "Yeni bir veri seti eklemek istediğinize emin misiniz?",
-                    "Uyarı", JOptionPane.YES_NO_OPTION);
+                    "Do you want to add new trajectory data?",
+                    "Warning", JOptionPane.YES_NO_OPTION);
             if (reply == JOptionPane.YES_OPTION) {
                 openFileDialog();
             }
         }
 
-    }//GEN-LAST:event_btnKoordinatEkleActionPerformed
+    }//GEN-LAST:event_btnAddTrajectoryDataActionPerformed
 
     private void btnZoomInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZoomInActionPerformed
         if (isFileLoaded) {
             System.out.println("Zoom In");
             zoomIn();
         } else {
-            // Buton çalışması durdurulur.
+            // Button not working here.
         }
     }//GEN-LAST:event_btnZoomInActionPerformed
 
@@ -280,21 +280,21 @@ public class MainFrame extends javax.swing.JFrame {
             System.out.println("Zoom Out");
             zoomOut();
         } else {
-            // Buton çalışması durdurulur.
+            // Button not working here.
         }
     }//GEN-LAST:event_btnZoomOutActionPerformed
 
-    private void btnIndirgemeYapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIndirgemeYapActionPerformed
+    private void btnReductionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReductionActionPerformed
         String value = txtEpsilon.getText();
 
         if ("".equals(value)) {
-            JOptionPane.showMessageDialog(null, "Lütfen epsilon değerini girin!", "Uyarı", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please set the epsilon value!", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
             try {
                 mapserver.IncomingData incomingData;
-                OutgoingData outgoingData = new OutgoingData("indirgeme", points, value);
+                OutgoingData outgoingData = new OutgoingData("reduction", points, value);
                 incomingData = Client.sendMapData(outgoingData);
-                System.out.println("İndirgendi!!");
+                System.out.println("Reduction succeed!");
 
                 if (incomingData != null) {
                     redMapUrl = Map.createUrl(incomingData.getProcessedData(), "blue", "0x0000FFFF");
@@ -306,31 +306,31 @@ public class MainFrame extends javax.swing.JFrame {
                     sf.setVisible(true);
 
                 } else {
-                    JOptionPane.showMessageDialog(null, "İndirgeme yapılamadı!", "Hata", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Reduction failed!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (NullPointerException ex) {
-                System.out.println("Hatalı texbox verisi: " + ex);
+                System.out.println("Wrong textbox data: " + ex);
             } catch (IOException ex) {
                 Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
-    }//GEN-LAST:event_btnIndirgemeYapActionPerformed
+    }//GEN-LAST:event_btnReductionActionPerformed
 
-    private void btnAlanSorgusuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlanSorgusuActionPerformed
+    private void btnSearchInFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchInFieldActionPerformed
 
-        String value = txtMerkezNokta.getText();
+        String value = txtCenterPoint.getText();
 
         if ("".equals(value)) {
-            JOptionPane.showMessageDialog(null, "Lütfen merkez nokta koordinatlarını girin!", "Uyarı", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please set the center point!", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
             try {
                 mapserver.IncomingData incomingData;
-                OutgoingData outgoingData = new OutgoingData("alansorgusu", points, value);
+                OutgoingData outgoingData = new OutgoingData("searchinfield", points, value);
                 incomingData = Client.sendMapData(outgoingData);               
 
                 if(incomingData != null) {
-                    System.out.println("İndirgendi!!");
+                    System.out.println("Reduction succeed!");
                     fieldMapUrl = Map.createUrlWithSearchField(incomingData.getProcessedData(), "blue", value);
                     fieldMapUrl = Map.changeZoomAmount(fieldMapUrl, zoomAmount);
                     rf.reloadMap(fieldMapUrl, "fieldmapcanvas");
@@ -338,37 +338,37 @@ public class MainFrame extends javax.swing.JFrame {
                     rf.getTxtNumOfPoint().setText(incomingData.getProcessedData().size() + "");
                     rf.setVisible(true);
                 } else {
-                    JOptionPane.showMessageDialog(null, "İndirgenme taraması yapılamadı!", "Hata", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Search in raw data failed!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (NullPointerException ex) {
-                System.out.println("Hatalı texbox verisi: " + ex);
+                System.out.println("Wrong texbox data: " + ex);
             } catch (IOException ex) {
                 Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
-    }//GEN-LAST:event_btnAlanSorgusuActionPerformed
+    }//GEN-LAST:event_btnSearchInFieldActionPerformed
 
     private void txtEpsilonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEpsilonMouseClicked
         txtEpsilon.setText("");
     }//GEN-LAST:event_txtEpsilonMouseClicked
 
-    private void txtMerkezNoktaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMerkezNoktaMouseClicked
-        txtMerkezNokta.setText("");
-    }//GEN-LAST:event_txtMerkezNoktaMouseClicked
+    private void txtCenterPointMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCenterPointMouseClicked
+        txtCenterPoint.setText("");
+    }//GEN-LAST:event_txtCenterPointMouseClicked
 
-    private void btnIndirgemeSorgusuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIndirgemeSorgusuActionPerformed
+    private void btnSearchInReductedFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchInReductedFieldActionPerformed
 
-                String value = txtMerkezNokta2.getText();
+                String value = txtCenterPoint2.getText();
                 String[] values = value.split(",");
                 String fValue = values[1]+ "," + values[2] + "," + values[3] + "," + values[4];
 
         if ("".equals(value)) {
-            JOptionPane.showMessageDialog(null, "Lütfen merkez nokta koordinatlarını girin!", "Uyarı", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please set the center point", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
             try {
                 mapserver.IncomingData incomingData;
-                OutgoingData outgoingData = new OutgoingData("indirgemesorgusu", points, value);
+                OutgoingData outgoingData = new OutgoingData("searchinreductedfield", points, value);
                 incomingData = Client.sendMapData(outgoingData);
 
                 if(incomingData != null) {
@@ -379,21 +379,21 @@ public class MainFrame extends javax.swing.JFrame {
                     rf.getTxtNumOfPoint().setText(incomingData.getProcessedData().size() + "");
                     rf.setVisible(true);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Alan taraması yapılamadı!", "Hata", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Search in reducted data failed!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (NullPointerException ex) {
-                System.out.println("Hatalı texbox verisi: " + ex);
+                System.out.println("Wrong texbox data: " + ex);
             } catch (IOException ex) {
                 Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
         
-    }//GEN-LAST:event_btnIndirgemeSorgusuActionPerformed
+    }//GEN-LAST:event_btnSearchInReductedFieldActionPerformed
 
-    private void txtMerkezNokta2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMerkezNokta2MouseClicked
-        txtMerkezNokta2.setText("");
-    }//GEN-LAST:event_txtMerkezNokta2MouseClicked
+    private void txtCenterPoint2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCenterPoint2MouseClicked
+        txtCenterPoint2.setText("");
+    }//GEN-LAST:event_txtCenterPoint2MouseClicked
 
     private void zoomIn() {
         mapUrl = Map.changeZoomAmount(mapUrl, ++zoomAmount);
@@ -426,14 +426,11 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     /**
-     * Açılan dosya içerisinde satır satır aldığı verileri virgüle göre
-     * keserek bir string diziye atar. Bu dizideki ilk veri enlem, ikinci
-     * veri ise boylam bilgisini verir. Bu enlem ve boylam bilgisi kullanı-
-     * larak Point tipinde nesneler oluşturulur ve bu nesneler points
-     * adındaki listeye eklenir. Oluşturulan liste ile harita için bir url
-     * oluşturulur daha sonra harita ekrana çizdirilir.
+     * It separates the data line by line according to comma then 
+     * assign to the string array. First data in the array is latitude, 
+     * and the second data is longitude. Then draws the map by these values.
      * 
-     * @param filePath Açılan dosyanın yolu
+     * @param filePath 
      * @throws IOException 
      */
     private void readFromFile(String filePath) throws IOException {
@@ -449,7 +446,7 @@ public class MainFrame extends javax.swing.JFrame {
                 points.add(newPoint);
             }
         } catch (IOException | NumberFormatException ex) {
-            System.out.println("Dosya string kesme işlemi hatası: " + ex);
+            System.out.println("File string read exception: " + ex);
         } finally {
             br.close();
         }
@@ -458,17 +455,18 @@ public class MainFrame extends javax.swing.JFrame {
             reloadMap(mapUrl, "maincanvas");
             isFileLoaded = true;
         } catch (NullPointerException ex) {
-            System.out.println("Giriş map yükleme hatası: " + ex);
+            System.out.println("Map loading error: " + ex);
         }
 
     }
 
     /**
-     * mapUrl ile Google sunucularına istek yollar ve dönen resmi ekrana basar.
      * 
-     * @param mapUrl Ekrana çizdirilecek resim için Google sunucularına 
-     * gönderilecek url
-     * @param imageName Proje dosyasında bulunan resmin adı
+     * With mapUrl, it sends the request to the Google servers 
+     * and prints the returned image on the screen.
+     * 
+     * @param mapUrl url that will send to Google servers
+     * @param imageName image name that will in the project folder
      */
     private void reloadMap(String mapUrl, String imageName) {
         try {
@@ -476,7 +474,7 @@ public class MainFrame extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        // Gelen resmin çerçeveye sığma ve yerleştirilme işlemleri
+        // image scaling process
         ImageIcon icon = new ImageIcon(imageName + ".jpg");
         Image img = icon.getImage().getScaledInstance(lbl_MapImage.getWidth(),
                 lbl_MapImage.getHeight(), Image.SCALE_SMOOTH);
@@ -485,7 +483,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     private void LookNFeel() {
         try {
-            // Klasik Windows form stili vermek için
+            // for classical windows theme
             UIManager.setLookAndFeel(new WindowsClassicLookAndFeel());
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -502,15 +500,15 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAlanSorgusu;
-    private javax.swing.JButton btnIndirgemeSorgusu;
-    private javax.swing.JButton btnIndirgemeYap;
-    private javax.swing.JButton btnKoordinatEkle;
+    private javax.swing.JButton btnSearchInField;
+    private javax.swing.JButton btnSearchInReductedField;
+    private javax.swing.JButton btnReduction;
+    private javax.swing.JButton btnAddTrajectoryData;
     private javax.swing.JButton btnZoomIn;
     private javax.swing.JButton btnZoomOut;
     private javax.swing.JLabel lbl_MapImage;
     private javax.swing.JTextField txtEpsilon;
-    private javax.swing.JTextField txtMerkezNokta;
-    private javax.swing.JTextField txtMerkezNokta2;
+    private javax.swing.JTextField txtCenterPoint;
+    private javax.swing.JTextField txtCenterPoint2;
     // End of variables declaration//GEN-END:variables
 }

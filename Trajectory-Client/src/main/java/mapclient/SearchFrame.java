@@ -30,8 +30,8 @@ public class SearchFrame extends javax.swing.JFrame {
         return mapUrl;
     }
 
-    public JLabel getTxtNoktaSayisi() {
-        return txtNoktaSayisi;
+    public JLabel getTxtNumberOfPoint() {
+        return txtNumberOfPoint;
     }
 
     public JLabel getTxtNumOfPoint() {
@@ -42,8 +42,8 @@ public class SearchFrame extends javax.swing.JFrame {
         return txtThTime;
     }
 
-    public JLabel getTxtThreadZamani() {
-        return txtThreadZamani;
+    public JLabel getTxtThreadTime() {
+        return txtThreadTime;
     }
     
 
@@ -52,22 +52,22 @@ public class SearchFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         lbl_SearchMap = new javax.swing.JLabel();
-        txtNoktaSayisi = new javax.swing.JLabel();
-        txtThreadZamani = new javax.swing.JLabel();
+        txtNumberOfPoint = new javax.swing.JLabel();
+        txtThreadTime = new javax.swing.JLabel();
         txtNumOfPoint = new javax.swing.JLabel();
         txtThTime = new javax.swing.JLabel();
         btnZoomIn = new javax.swing.JButton();
         btnZoomOut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Gezinge Verisi İşleme - Arama Ekranı");
+        setTitle("Trajectory Data Processing - Search Screen");
         setResizable(false);
 
-        txtNoktaSayisi.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        txtNoktaSayisi.setText("Nokta Sayısı            : ");
+        txtNumberOfPoint.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        txtNumberOfPoint.setText("Number of Point: ");
 
-        txtThreadZamani.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        txtThreadZamani.setText("Thread Zamanı       :");
+        txtThreadTime.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        txtThreadTime.setText("Thread Time:");
 
         txtNumOfPoint.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         txtNumOfPoint.setText("00");
@@ -102,8 +102,8 @@ public class SearchFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNoktaSayisi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtThreadZamani, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNumberOfPoint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtThreadTime, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNumOfPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,7 +126,7 @@ public class SearchFrame extends javax.swing.JFrame {
                         .addComponent(lbl_SearchMap, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNoktaSayisi)
+                            .addComponent(txtNumberOfPoint)
                             .addComponent(txtNumOfPoint)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(631, 631, 631)
@@ -136,7 +136,7 @@ public class SearchFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(655, 655, 655)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtThreadZamani)
+                            .addComponent(txtThreadTime)
                             .addComponent(txtThTime))))
                 .addGap(21, 21, 21))
         );
@@ -191,9 +191,9 @@ public class SearchFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnZoomIn;
     private javax.swing.JButton btnZoomOut;
     private javax.swing.JLabel lbl_SearchMap;
-    private javax.swing.JLabel txtNoktaSayisi;
+    private javax.swing.JLabel txtNumberOfPoint;
     private javax.swing.JLabel txtNumOfPoint;
     private javax.swing.JLabel txtThTime;
-    private javax.swing.JLabel txtThreadZamani;
+    private javax.swing.JLabel txtThreadTime;
     // End of variables declaration//GEN-END:variables
 }

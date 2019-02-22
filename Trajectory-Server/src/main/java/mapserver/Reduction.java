@@ -5,30 +5,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * İndirgeme işleminin yapıldığı sınıf
+ * Reduction operation class
  *
  */
 public class Reduction {
     /**
-     * Gelen noktalar kümesini ve epsilon değerini kullanarak indirgeme işlemi
-     * yapar. Sonuçları kendisine gönderilen 3. parametredeki listeye atar.
+     * Reduces the set of incoming points using the epsilon value. Assigns 
+     * the results to the list in parameter 3 sent to it.
      * 
-     * @param points İndirgenecek noktaların bulunduğu liste
-     * @param epsilon Epsilon değeri
-     * @param output İşlemler sonrası oluşan sonuçların atanacağı liste
+     * @param points List of points to reduce
+     * @param epsilon Epsilon value
+     * @param output List of the results to be created after the operations
      */
     public static void DouglasPeucker(List<mapclient.Point> points, double epsilon, List<mapclient.Point> output) {
-        // Nokta sayısı 2'den azsa indirgeme yapılamaz.
+        // Reduction is not possible if the number of dots is less than 2.
         if(points.size() < 2) {
-            throw new IllegalArgumentException("Yeterli miktarda nokta yok!");
+            throw new IllegalArgumentException("Not enough points!");
         }
-        double maxDistance = 0.0;   // Maksimum dikey uzaklık
-        int index = 0;  // Maksimum dikey uzaklığa sahip noktanın indeksi
-        int end = points.size() - 1;    // Liste üzerindeki son noktanın indeksi
+        double maxDistance = 0.0;   // Maximum vertical distance
+        int index = 0;  // Index of the point with the maximum vertical distance
+        int end = points.size() - 1;    // Index of the last point on the list
         
         for (int i=1; i<end; ++i) {
-            // Başlangıç ve bitiş noktası arasında, maksimum dikey uzaklığı bulmak için
-            // dikey uzaklık fonksiyonuna listedeki veriler tek tek gönderilir.
+            /**
+             *  To find the maximum vertical distance between the start and end point, 
+             * the data in the list is sent individually to the vertical distance function.
+            */ 
             double d = perpendicularDistance(points.get(i), points.get(0), points.get(end));
             if(d > maxDistance) {
                 index = i;
@@ -36,31 +38,33 @@ public class Reduction {
             }
         }
 
-        // Eğer max mesafe epsilondan büyükse, özyinelemeli olarak basitleştir
+        // If the max distance is greater than the epsilon, recursively simplify.
         if(maxDistance > epsilon) {
-            // İşlemler sonucunda başlangıç noktası ile geçerli nokta arasındaki noktaları tutan liste
+            // List holding the points between the starting point and the current point as a result of the transaction
             ArrayList<mapclient.Point> result1 = new ArrayList<>(); 
-            // İşlemler sonucunda geçerli nokta ile bitiş noktası arasındaki noktaları tutan liste
+            // List holding the points between the current point and the endpoint as a result of the actions
             ArrayList<mapclient.Point> result2 = new ArrayList<>();
             
-            // Başlangıç noktası ile geçerli nokta arasındaki tüm noktalar
+            // All points between the starting point and the current point
             List<mapclient.Point> firstLine = points.subList(0, index +1);
-            // Geçerli nokta ile bitiş arasındaki tüm noktalar
+            // All points between the current point and the end
             List<mapclient.Point> lastLine = points.subList(index, points.size());
             
-            // Özyinelemeli olarak başlangıç noktası ile geçerli noktayı baz alarak indirgeme yapar.
+            // Recursively reduces the starting point and the current point.
             DouglasPeucker(firstLine, epsilon, result1);
             // Özyinelemeli olarak geçerli nokta ile bitiş noktasını baz alarak indirgeme yapar.
             DouglasPeucker(lastLine, epsilon, result2);
             
-            // O anki tüm sonuçları output listesine atar
+            // Assigns all current results to the output list.
             output.addAll(result1.subList(0, result1.size() - 1));
             output.addAll(result2);
             
         } else {
-            // Eğer o anki maksimum dikey uzaklık epsilondan küçük veya eşitse 
-            // özyinelemenin o adımı durur ve o adımdaki sonuç listesine 
-            // o adımdaki başlangıç ve bitiş değeri değeri eklenir.
+            /**
+             * If the current maximum vertical distance is less than or equal to the 
+             * epsilon, then that step of the recursion stops, and the result list in 
+             * that step is added to the start and end value in that step.
+             */
             output.clear();
             output.add(points.get(0));
             output.add(points.get(points.size() - 1));
@@ -69,21 +73,21 @@ public class Reduction {
     }
 
     /**
-     * O anki noktanın, başlangıç ve bitiş noktalarını birleştiren hayali 
-     * bir çizgiye olan dikey uzaklığı verir.
+     * Returns the vertical distance from the current point to an imaginary 
+     * line that joins the beginning and end points.
      * 
-     * @param currentPoint Şu anki nokta bilgisi
-     * @param startPoint Başlangıç noktası
-     * @param endPoint Bitiş noktası
+     * @param currentPoint Current point info
+     * @param startPoint Start point
+     * @param endPoint End point
      * @return 
      */
     private static double perpendicularDistance(mapclient.Point currentPoint, mapclient.Point startPoint, mapclient.Point endPoint) {
         
-        // Başlangıç ve bitiş noktasınının enlem ve boylam farkları
+        // Latitude and longitude differences of the start and end point
         double x = endPoint.getLatitude() - startPoint.getLatitude();
         double y = endPoint.getLongitude() - startPoint.getLongitude();
         
-        // Normalleştirme işlemi
+        // Normalization process
         double h = Math.hypot(x, y);    // sqrt(x^2 + y^2)
         if(h > 0.0) {
             x /= h;
@@ -93,23 +97,22 @@ public class Reduction {
         double pX = currentPoint.getLatitude() - startPoint.getLatitude();
         double pY = currentPoint.getLongitude() - startPoint.getLongitude();
 
-        // Skaler çarpım(O anki nokta normalleştirilmiş doğrultuya bakar)
+        // Scalar multiplication (current point looks at normalized direction)
         double pDot = x*pX + y*pY;
         
-        // Ölçeklendirilmiş vektör var olan yön vektöründen çıkartılır.
+        // The scaled vector is removed from the existing direction vector.
         double aX = pX - pDot*x;
         double aY = pY - pDot*y;
                
-        // Noktaların hipotenüsü bize dikey uzaklığı verir.
+        // The hypotenuse of the points gives us the vertical distance.
         return Math.hypot(aX, aY);
     }
     /**
-     * (1-(İndirgenme sonucu oluşan veri sayısı/Ham veri sayısı))*100
-     * işleminin sonucunu double olarak döndürür. Bu işlem bize indirgenme
-     * oranını verir.
+     * (1-(Number of data generated as a result of reduction/Number of raw data))*100 
+     * returns the result of the operation as a double. This process gives us the reduction rate.
      * 
-     * @param crudedSize Ham veri sayısı
-     * @param processedSize İndirgenme sonucu oluşan veri sayısı
+     * @param crudedSize Number of raw data
+     * @param processedSize Number of data generated by reduction
      * @return 
      */
     public static double calculateReductionRate(int crudedSize, int processedSize) {

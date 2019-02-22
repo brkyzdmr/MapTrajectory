@@ -6,14 +6,14 @@ import java.util.List;
 import mapclient.Point;
 
 /**
- * İstemci tarafına toplu veri gönderebilmek için oluşturulan sınıf
+ * This class created for the send data, collectively.
  *  
  */
 public class IncomingData implements Serializable{
-    private List<mapclient.Point> crudedData; // Ham veri
-    private List<mapclient.Point> processedData; // İşlem görmüş veri
-    private String threadTime;  // Thread süresi
-    private double reductionRate; // İndirgeme oranı
+    private List<mapclient.Point> crudedData;
+    private List<mapclient.Point> processedData;
+    private String threadTime;
+    private double reductionRate;
 
     public IncomingData(List<Point> crudedData) {
         this.crudedData = crudedData;

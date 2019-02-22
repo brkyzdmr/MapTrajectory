@@ -17,7 +17,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
- * @author berka
+ * @author brkyzdmr
  */
 public class ServiceFrame extends javax.swing.JFrame {
     
@@ -45,9 +45,9 @@ public class ServiceFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         lbl_RedMap = new javax.swing.JLabel();
-        txtNoktaSayisi = new javax.swing.JLabel();
-        txtIndirgenmeOranı = new javax.swing.JLabel();
-        txtThreadZamani = new javax.swing.JLabel();
+        txtNumberOfPoint = new javax.swing.JLabel();
+        txtReductionRate = new javax.swing.JLabel();
+        txtThreadTime = new javax.swing.JLabel();
         txtNumOfPoint = new javax.swing.JLabel();
         txtRedRate = new javax.swing.JLabel();
         txtThTime = new javax.swing.JLabel();
@@ -61,14 +61,14 @@ public class ServiceFrame extends javax.swing.JFrame {
         lbl_RedMap.setBackground(new java.awt.Color(0, 0, 0));
         lbl_RedMap.setToolTipText("");
 
-        txtNoktaSayisi.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        txtNoktaSayisi.setText("Nokta Sayısı            : ");
+        txtNumberOfPoint.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        txtNumberOfPoint.setText("Number of Point: ");
 
-        txtIndirgenmeOranı.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        txtIndirgenmeOranı.setText("İndirgenme Oranı  : ");
+        txtReductionRate.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        txtReductionRate.setText("Reduction Rate: ");
 
-        txtThreadZamani.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        txtThreadZamani.setText("Thread Zamanı       :");
+        txtThreadTime.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        txtThreadTime.setText("Thread Time:");
 
         txtNumOfPoint.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         txtNumOfPoint.setText("00");
@@ -109,9 +109,9 @@ public class ServiceFrame extends javax.swing.JFrame {
                         .addComponent(lbl_RedMap, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIndirgenmeOranı, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtNoktaSayisi, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                            .addComponent(txtThreadZamani, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtReductionRate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtNumberOfPoint, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                            .addComponent(txtThreadTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -134,11 +134,11 @@ public class ServiceFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtNoktaSayisi)
+                        .addComponent(txtNumberOfPoint)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtIndirgenmeOranı)
+                        .addComponent(txtReductionRate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtThreadZamani))
+                        .addComponent(txtThreadTime))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnZoomIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -195,8 +195,8 @@ public class ServiceFrame extends javax.swing.JFrame {
         this.txtThTime = txtThTime;
     }  
 
-    public JLabel getTxtIndirgenmeOranı() {
-        return txtIndirgenmeOranı;
+    public JLabel gettxtReductionRate() {
+        return txtReductionRate;
     }
     
     public void reloadMap(String mapUrl, String imageName) {
@@ -238,11 +238,11 @@ public class ServiceFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnZoomIn;
     private javax.swing.JButton btnZoomOut;
     private javax.swing.JLabel lbl_RedMap;
-    private javax.swing.JLabel txtIndirgenmeOranı;
-    private javax.swing.JLabel txtNoktaSayisi;
+    private javax.swing.JLabel txtReductionRate;
+    private javax.swing.JLabel txtNumberOfPoint;
     private javax.swing.JLabel txtNumOfPoint;
     private javax.swing.JLabel txtRedRate;
     private javax.swing.JLabel txtThTime;
-    private javax.swing.JLabel txtThreadZamani;
+    private javax.swing.JLabel txtThreadTime;
     // End of variables declaration//GEN-END:variables
 }

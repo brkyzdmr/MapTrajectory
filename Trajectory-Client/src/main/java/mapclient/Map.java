@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.List;
 
 /**
- * Harita ile ilgili işlemleri yapan sınıf
+ * It is the class that performs the operations related to the map.
  * 
  */
 public class Map {
@@ -18,11 +18,11 @@ public class Map {
     private static String API_KEY = "AIzaSyAgls3MF-F3DOBSW_ci3VepC1Om2Fg-jHY";
     
     /**
-     * imageUrl ile Google sunucularına istek yapar, geriye bir resim döner.
-     * Dönen bu resim proje dosyasına imageName.jpg şeklinde kaydedilir.
+     * imageUrl makes a request to Google servers and returns a picture. 
+     * This rotating image is saved in the project file as imageName.jpg.
      * 
-     * @param imageUrl Google API için gereken url
-     * @param imageName Google sunucularından alınıp, proje dosyasında oluşturulacak resmin adı
+     * @param imageUrl Required URL for Google API
+     * @param imageName The name of the image taken from Google servers and created in the project file
      * @throws MalformedURLException
      * @throws IOException 
      */
@@ -44,22 +44,20 @@ public class Map {
     }
     
     /**
-     * imageUrl içerisinde bulunan &zoom parametresini değiştirerek harita
-     * üzerinde zoom-in ve zoom-out işlemlerinin yapılması için imageUrl
-     * içerisinde "&zoom=" metnini arar ve bulduktan sonra parametrenin 
-     * aldığı değeri zoomAmount ile değiştirir.
+     * imageUrl to change the zoom parameter to search and zoom the map 
+     * on the map within the "&zoom=" text in the imageUrl and after finding 
+     * the value of the parameter is changed to zoomAmount ".
      * 
-     * @param imageUrl Google API için gereken url
-     * @param zoomAmount Url'deki zoom miktarı yerine gelecek sayı
-     * @return Zoom işlemi sonrası oluşan url
+     * @param imageUrl Required URL for Google API
+     * @param zoomAmount The number in the url instead of the amount of zoom
+     * @return URL generated after zooming
      */
     public static String changeZoomAmount(String imageUrl, int zoomAmount) {
         String find = "&zoom=";
         StringBuffer bf = new StringBuffer(imageUrl);
         int i = imageUrl.lastIndexOf(find);
         
-        // &zoom=10 yerine &zoom=9 yazılacağı zaman sonunda fazladan sıfır kalıyor
-        // bunu önlemek için böyle bir işlem yapıyoruz.
+        // &zoom=10 and &zoom=9 transition error fix
         if(zoomAmount > 8) { 
             bf.replace(i+6, i+8, String.valueOf(zoomAmount));
         } else {
@@ -72,14 +70,14 @@ public class Map {
     }
     
     /**
-     * points değişkenindeki noktaları, bu noktalar için markerColor
-     * değişkeninde bulunan renk ve pathColor değişkeninde yol çizgileri
-     * için bulunan rengi kullanarak bir url oluşturur.
+     * The points in the points variable create a url using the color 
+     * in the markerColor variable for those points and the color for 
+     * the path lines in the pathColor variable.
      * 
-     * @param points Haritada oluşturulacak olan noktalar
-     * @param markerColor Haritadaki nokta işaretçilerinin rengi(red,  blue)
-     * @param pathColor Haritada noktaları birleştiren çizgilerin rengi(0xff0000ff)
-     * @return Google API için oluşturulan harita urlsi
+     * @param points Points to be created on the map
+     * @param markerColor Color of point markers on the map (red, blue)
+     * @param pathColor Color of lines connecting dots on map (0xff0000ff)
+     * @return Map url created for Google API
      */
     public static String createUrl(List<mapclient.Point> points, String markerColor, 
             String pathColor) {
@@ -89,7 +87,7 @@ public class Map {
         double avrgLatitude = 0.0;
         double avrgLongitude = 0.0;
         
-        // Noktaların orta noktasını bulmak için 
+        // To find the midpoint of the dots
         for (int i = 0; i < points.size(); i++) {
             avrgLatitude += points.get(i).getLatitude();
             avrgLongitude += points.get(i).getLongitude();

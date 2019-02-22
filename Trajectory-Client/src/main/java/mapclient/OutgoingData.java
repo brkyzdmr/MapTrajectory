@@ -5,13 +5,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Sunucuya toplu veri gönderebilmek için oluşturulmuş sınıf
+ * Class created to send wholesale data to the server
  * 
  */
 public class OutgoingData implements Serializable{
-    private String key; // Hangi servisin çağrılacağı bilgisini taşır.
-    private ArrayList<Point> crudedData;  // Ham veri
-    private String textBoxValue;    // Servisler için gereken texbox verilerini taşır.
+    private String key; // Information about which service to call.
+    private ArrayList<Point> crudedData;  // Raw data
+    private String textBoxValue;    // It carries texbox data required for services.
 
     public OutgoingData(String key, ArrayList<Point> crudedData, String textBoxValue) {
         this.key = key;

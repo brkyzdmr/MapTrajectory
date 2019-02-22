@@ -16,12 +16,12 @@ public class QuadTree {
     private static double edgeY;
     
     /**
-     * Quad tree oluşturabilmek için gerek node sınıfı
+     * This class created for creating the Quad Tree data structure.
      */
     public static class Node {
-        private double latitude;    // enlem
-        private double longitude;   // boylam
-        Node NE, NW, SE, SW;    // Node'un bağlandığı yönsel nodelar
+        private double latitude; 
+        private double longitude;
+        Node NE, NW, SE, SW;    // Node direction
 
         public Node(double latitude, double longitude) {
             this.latitude = latitude;
@@ -30,17 +30,17 @@ public class QuadTree {
     }
     /**
      * 
-     * @return Arama sonucu oluşturulan sonuç verilerinin bulunduğu liste
+     * @return It contains result data for the search process.
      */
     public static List<mapclient.Point> getResult() {
         return result;
     }
     
     /**
-     * Ağaç içerisinde, köke göre yönsel olarak ekleme işlemi yapar.
+     * It makes the process of adding direction according to the root within the tree.
      * 
-     * @param latitude Enlem bilgisi
-     * @param longitude Boylam bilgisi
+     * @param latitude Latitude value
+     * @param longitude Longitude value
      */
     private static void addNode(double latitude, double longitude) {
         if(root == null) {
@@ -91,7 +91,7 @@ public class QuadTree {
                         return;
                     }
                 } else {
-                    System.out.println("Aynı noktaya ekleme işlemi yapılamaz!");
+                    System.out.println("Cannot add to same point!");
                     return;
                 }
             }
@@ -99,11 +99,12 @@ public class QuadTree {
     }
     
     /**
-     * Kök node'u alarak içerisinde preorder olarak dolaşır. Bu dolaşma esnasında
-     * eğer geçerli node'un enlem ve boylam bilgisi, aranılacak dikdörtgen 
-     * koordinatları içerisinde kalıyorsa, geçerli node sonuç listesine eklenir.
+     * It circulates as a preorder in the root node. During this run, 
+     * if the current node's latitude and longitude information is within 
+     * the rectangular coordinates to be searched, the current node is added 
+     * to the list of results.
      * 
-     * @param wanted Aranmak istenen ağaçtaki kök node
+     * @param wanted Root node in the desired tree
      */
     private static void searchNode(Node wanted) {
         Node focusedNode = wanted;        
@@ -117,7 +118,7 @@ public class QuadTree {
                 
                 result.add(newPoint);
             }    
-            // Preorder dolaşma
+            // Preorder circulation
             searchNode(focusedNode.NW);
             searchNode(focusedNode.NE);
             searchNode(focusedNode.SW);
@@ -126,10 +127,10 @@ public class QuadTree {
     }
     
     /**
-     * Liste ile birlikte gelen noktaları kullanarak, yönsel bir ağaç oluşturmak
-     * için noktaları sıra ile addNode fonksiyonuna gönderir.
+     * Using the points that come with the list, it sends the points
+     * to the addNode function with the sequence to create a directional tree.
      * 
-     * @param points Ağaç oluşturulması için gerekli noktaların listesi
+     * @param points List of points needed to create a tree
      */
     private static void makeTree(List<mapclient.Point> points) {        
         for(int i=0; i<points.size(); i++) {
@@ -140,19 +141,19 @@ public class QuadTree {
     }
     
     /**
-     * Ham veri üzerinde arama işlemi yapılması için gerek işlemleri yönetir.
-     * Görevi tamamlandığında result değişkeninde sonuç bilgileri bulunur.
+     * Manages processes for searching on raw data. When the task is completed, 
+     * the result variable contains the result information.
      * 
-     * @param data Client'tan gelen veri nesnesi
+     * @param data Data object from Client
      */
     public static void searchInTree(mapclient.OutgoingData data) {
         String tb = data.getTextBoxValue();     
         String[] values = tb.split(",");
         
-        clickX = Double.parseDouble(values[0]); // aranacak merkez noktası enlemi
-        clickY = Double.parseDouble(values[1]); // aranacak merkez noktası boylamı
-        edgeX = Double.parseDouble(values[2]);  // kenar bilgisi 1
-        edgeY = Double.parseDouble(values[3]);  // kenar bilgisi 2
+        clickX = Double.parseDouble(values[0]); // center point latitude to be searched
+        clickY = Double.parseDouble(values[1]); // center point longitude to be searched
+        edgeX = Double.parseDouble(values[2]);  // edge data X
+        edgeY = Double.parseDouble(values[3]);  // edge data Y
         System.out.println(clickX + "," + clickY + "," + edgeX + "," + edgeY);
         
         result = new ArrayList<>();
@@ -165,13 +166,13 @@ public class QuadTree {
     }
     
     /**
-     * İndirgenmiş veri üzerinde dikdörtgensel arama gerçekleştirmek için 
-     * gereken işlemleri yöneten fonsksiyondur. Görevini tamamladığında
-     * result değişkenine, indirgenmiş veriler içerisinde, dikdörtgensel alan
-     * ile çakışan sonuçları atar.
+     * It is the function that manages the operations required to perform 
+     * rectangular search on reduced data. When it completes its task, it assigns 
+     * the result variable, within the reduced data, to the overlapping results with 
+     * the rectangular area.
      * 
-     * @param data Client'tan gelen veri nesnesi
-     * @param indata Sunucudan gönderilecek olan veri bilgisi(indirgenmiş veriyi kullanmak için)
+     * @param data Data object from Client
+     * @param indata Data information to be sent from the server (to use the reduced data)
      */
     public static void searchInTree(mapclient.OutgoingData data, IncomingData indata) {
         String tb = data.getTextBoxValue();    
@@ -194,11 +195,11 @@ public class QuadTree {
     }
     
     /**
-     * Ağaç oluşturmak için gereken kök noktayı, gelen noktalar listesini
-     * kullanarak oluşturur. Noktaların enlem ve boylam ortalamaları ile 
-     * kök noktanın enlem ve boylam bilgisi oluşuturulur.
+     * Creates the root point that is needed to create a tree using 
+     * a list of incoming dots. The latitude and longitude of the 
+     * points and the latitude and longitude of the root point are formed.
      * 
-     * @param points Oluşturulacak ağaç için gereken noktalar listesi
+     * @param points List of points required for the tree to be created
      */
     private static void makeRoot(List<mapclient.Point> points) {
         double avrgLatitude = 0.0;       
@@ -208,8 +209,8 @@ public class QuadTree {
             avrgLatitude += points.get(i).getLatitude();
             avrgLongitude += points.get(i).getLongitude();
         }
-        avrgLatitude /= points.size();  // enlem ortalaması
-        avrgLongitude /= points.size(); // boylam ortalaması
+        avrgLatitude /= points.size();  // latitude average
+        avrgLongitude /= points.size(); // longitude average
         System.out.println("Size: " + points.size());
         
         rootLat = avrgLatitude;
@@ -220,7 +221,7 @@ public class QuadTree {
     }
     
     /**
-     * Hesaplanan sonuç bilgisini konsola yazdırmak için kullanılır.
+     * Used to print the calculated result information to the console.
      */
     private static void printResult() {
         System.out.println("Result: ");
